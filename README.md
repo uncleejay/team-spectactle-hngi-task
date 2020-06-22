@@ -60,8 +60,8 @@ iv)	Bootstrap
 Backend
 •	Python
 To run the site: 
-•	Javascript  
-•	Django version 1 and above
+•	PHP 
+•	Python 2 and 3
 •	HTTPS support
 
 
