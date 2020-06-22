@@ -157,7 +157,13 @@
 					            <th>Total Points</th>
 					        </tr>
 					    </thead>
-					    <tbody  id="jsonData">
+					    <tbody  >
+					        <tr id="jsonData">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
 					    </tbody>
 					</table>
                 	</div>
@@ -192,7 +198,7 @@
                 });
             });
             $(document).ready( function () {
-			    
+			    $('#table_id').DataTable();
 
 			    var myItems;
 
@@ -225,7 +231,7 @@
 				  console.log('the data: ', data.length);
 
                   for(i = 0; i < data.length; i++) {
-                    $( "<tr>", {
+                    $( "<td>", {
 				    html: "<td id='" + i + "'>" + data[i].FULL_NAME + "</td> <td id='" + i + "'>" + data[i].USERNAME + "</td> <td id='" + i + "'>" + data[i].EMAIL + "</td> <td id='" + i + "'>" + data[i].TOTAL_POINTS + "</td>"
 				  }).appendTo( "#jsonData" );
                     // items.push( "<td id='" + i + "'>" + data[i].FULL_NAME + "</td> " );
@@ -240,7 +246,6 @@
 				//   $( "<tr>", {
 				//     html: items.join( "" )
 				//   }).appendTo( "#jsonData" );
-                $('#table_id').DataTable();
 				});
 			} );
 

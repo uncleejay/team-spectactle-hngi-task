@@ -157,7 +157,13 @@
 					            <th>Total Points</th>
 					        </tr>
 					    </thead>
-					    <tbody  id="jsonData">
+					    <tbody  >
+					        <tr id="jsonData">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
 					    </tbody>
 					</table>
                 	</div>
@@ -192,7 +198,7 @@
                 });
             });
             $(document).ready( function () {
-			    
+			    $('#table_id').DataTable();
 
 			    var myItems;
 
@@ -240,7 +246,6 @@
 				//   $( "<tr>", {
 				//     html: items.join( "" )
 				//   }).appendTo( "#jsonData" );
-                $('#table_id').DataTable();
 				});
 			} );
 
