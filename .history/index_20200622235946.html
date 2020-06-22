@@ -73,13 +73,9 @@
                 <div class="line"></div>
                 <h3 class="text-center mb-5">Top Three Interns</h3>
                 <div class="container">
-            	<div class="row" >
-                    <div id="jsonInfo">
-                        <div class="showJson" ></div>
-                    </div>
-                    
+            	<div class="row">
 
-				<!-- <div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6">
 
             <div class="card hovercard shadow">
                 <div class="cardheader">
@@ -93,7 +89,7 @@
                         <a target="_blank" href="https://scripteden.com/">Intern's name</a>
                     </div>
                     
-                    <div >
+                    <div id="jsonInfo">
                         <div class="desc">Slack ID: </div>
                         <div class="desc">Email: </div>
                         <hr/>
@@ -158,7 +154,7 @@
                 </div>
             </div>
 
-        </div> -->
+        </div>
 
 	</div>
                 </div>
@@ -239,7 +235,7 @@
                 console.log(url)
 			    $.getJSON( url, function( data ) {
 				  var items = [];
-				  console.log('the data: ', data);
+				  console.log('the data: ', data.length);
 
                   for(i = 0; i < data.length; i++) {
                     $( "<tr>", {
@@ -249,9 +245,11 @@
                     // console.log('sdshj', data[i])
 
 
-                        $( '<div>', {
-                            html: '<div class="card hovercard shadow"><div class="cardheader"></div><div class="avatar"><img alt="" src="http://lorempixel.com/100/100/people/9/"></div><div class="info"><div class="title"><a target="_blank" href="https://scripteden.com/">Intern\'s Name</a></div><div class="desc">Slack ID: '+ data[i].USERNAME + '</div><div class="desc">Email: '+ data[i].EMAIL +'</div><hr/><h6>Total points: '+data[i].TOTAL_POINTS+'</h6> </div></div></div>'
+                    if(i === 3) {
+                        $( "<tr>", {
+                            html: '<div class="desc">Slack ID: data[i].USERNAME</div><div class="desc">Email: data[i].EMAIL</div><hr/><h6>Total points: data[i].TOTAL_POINTS</h6><p>443</p>'
                         }).appendTo( "#jsonInfo" );
+                    }
                   }
 
 				//   $.each( data, function( key, val ) {

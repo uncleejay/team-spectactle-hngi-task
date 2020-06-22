@@ -79,7 +79,7 @@
                     </div>
                     
 
-				<!-- <div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6">
 
             <div class="card hovercard shadow">
                 <div class="cardheader">
@@ -158,7 +158,7 @@
                 </div>
             </div>
 
-        </div> -->
+        </div>
 
 	</div>
                 </div>
@@ -249,7 +249,8 @@
                     // console.log('sdshj', data[i])
 
 
-                        $( '<div>', {
+                        $( '<div class="col-lg-4 col-sm-6">', {
+                            class: 'showJson',
                             html: '<div class="card hovercard shadow"><div class="cardheader"></div><div class="avatar"><img alt="" src="http://lorempixel.com/100/100/people/9/"></div><div class="info"><div class="title"><a target="_blank" href="https://scripteden.com/">Intern\'s Name</a></div><div class="desc">Slack ID: '+ data[i].USERNAME + '</div><div class="desc">Email: '+ data[i].EMAIL +'</div><hr/><h6>Total points: '+data[i].TOTAL_POINTS+'</h6> </div></div></div>'
                         }).appendTo( "#jsonInfo" );
                   }
