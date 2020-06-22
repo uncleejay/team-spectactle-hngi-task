@@ -20,7 +20,6 @@ The goal of the project are as follows:
 •	The leaderboard should show the top 3 people in a unique way,
 •	It should allow for sorting (based on point), and
 •	It should allow people to share their positions on social media 
-•	Have a post on lucid explaining how your tool works.
 •	Take at least 5 hours
 
 Content structure

@@ -29,13 +29,13 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li>
+                    <li class="active">
                         <a href="#homeSubmenu">Dashboard</a>
                     </li>
                     <li>
                         <a href="#">Tasks</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#">Leaderboard</a>
                     </li>
                     <li>
@@ -71,7 +71,6 @@
                 <h2>Leaderboard For HNGi7 Interns</h2>
 
                 <div class="line"></div>
-                <h3 class="text-center mb-5">Top Three Interns</h3>
                 <div class="container">
             	<div class="row">
 				<div class="col-lg-4 col-sm-6">
@@ -146,7 +145,7 @@
 	</div>
                 </div>
                 <div class="container mt-5">
-                	<div class="card table-responsive shadow px-5">
+                	<div class="card shadow px-5">
                 		
 					<table id="table_id" class="display">
 					    <thead>
@@ -219,9 +218,8 @@
 				  //   });
 
 
-                var url = "http://" + window.location.host + "/index.php"
-                console.log(url)
-			    $.getJSON( url, function( data ) {
+
+			    $.getJSON( "http://localhost:8000/main.php", function( data ) {
 				  var items = [];
 				  console.log('the data: ', data);
 
