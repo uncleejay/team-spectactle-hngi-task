@@ -29,13 +29,13 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li>
+                    <li class="active">
                         <a href="#homeSubmenu">Dashboard</a>
                     </li>
                     <li>
                         <a href="#">Tasks</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#">Leaderboard</a>
                     </li>
                     <li>
@@ -71,7 +71,6 @@
                 <h2>Leaderboard For HNGi7 Interns</h2>
 
                 <div class="line"></div>
-                <h3 class="text-center mb-5">Top Three Interns</h3>
                 <div class="container">
             	<div class="row">
 				<div class="col-lg-4 col-sm-6">
@@ -223,20 +222,12 @@
                 console.log(url)
 			    $.getJSON( url, function( data ) {
 				  var items = [];
-				  console.log('the data: ', data.length);
+				  console.log('the data: ', data);
 
-                  for(i = 0; i < data.length; i++) {
-                    $( "<tr>", {
-				    html: "<td id='" + i + "'>" + data[i].FULL_NAME + "</td> <td id='" + i + "'>" + data[i].USERNAME + "</td> <td id='" + i + "'>" + data[i].EMAIL + "</td> <td id='" + i + "'>" + data[i].TOTAL_POINTS + "</td> </tr>"
-				  }).appendTo( "#jsonData" );
-                    // items.push( "<td id='" + i + "'>" + data[i].FULL_NAME + "</td> " );
-                    console.log('sdshj', data[i])
-                  }
-
-				//   $.each( data, function( key, val ) {
-				//     items.push( "<td id='" + key + "'>" + val[0].FULL_NAME + "</td>" );
-                //     console.log(val[0].FULL_NAME)
-				//   });
+				  $.each( data, function( key, val ) {
+				    items.push( "<td id='" + key + "'>" + val[0].FULL_NAME + "</td>" );
+                    console.log(val[0].FULL_NAME)
+				  });
 
 				  $( "<tr>", {
 				    html: items.join( "" )

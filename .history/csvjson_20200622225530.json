@@ -1,5 +1,4 @@
-{
-  "details": [
+﻿ [
   {
     "FULL_NAME": "Seun Oguntonade",
     "USERNAME": "@SeunOG",
@@ -39,35 +38,5 @@
     "USERNAME__1": "",
     "EMAIL__1": "",
     "TOTAL POINTS__1": ""
-  },
-  {
-   "FULL_NAME": "Melissa Ugrai",
-   "USERNAME": "@Melissa", 
-   "EMAIL": "mugrai@gmail.com", 
-   "TOTAL_POINTS": 6,
-   "FULL NAME__1": "",
-   "USERNAME__1": "", 
-   "EMAIL__1": "", 
-   "TOTAL POINTS__1": ""},
-  {
-   "FULL_NAME": "Joseph Okon Unomieta", 
-   "USERNAME": "@Unomieta", 
-   "EMAIL": "lionelunomieta@gmail.com", 
-   "TOTAL_POINTS": 5,
-   "FULL NAME__1": "", 
-   "USERNAME__1": "", 
-   "EMAIL__1": "",
-   "TOTAL POINTS__1": ""},
-  {
-   "FULL_NAME": "Jafar Kamar", 
-   "USERNAME": "@Jafar", 
-   "EMAIL": "kamsy74@gmail.com", 
-   "TOTAL_POINTS": 3,
-   "FULL NAME__1": "", 
-   "USERNAME__1": "", 
-   "EMAIL__1": "", 
-   "TOTAL POINTS__1": ""
-   }   
+  }
 ]
-}
-
