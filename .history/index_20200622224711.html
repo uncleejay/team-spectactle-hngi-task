@@ -9,7 +9,6 @@
 
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="style2.css">
         <!-- Scrollbar Custom CSS -->
@@ -30,13 +29,13 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li>
+                    <li class="active">
                         <a href="#homeSubmenu">Dashboard</a>
                     </li>
                     <li>
                         <a href="#">Tasks</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#">Leaderboard</a>
                     </li>
                     <li>
@@ -56,8 +55,8 @@
                     <div class="container-fluid">
 
                         <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="navbar-btn" style="border-radius: 5px">
-                                <i class="fa fa-toggle-on"></i>
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
                                 <span>Toggle Sidebar</span>
                             </button>
                         </div>
@@ -72,18 +71,8 @@
                 <h2>Leaderboard For HNGi7 Interns</h2>
 
                 <div class="line"></div>
-                <h3 class="text-center mb-5">Top Three Interns</h3>
                 <div class="container">
-            	<div class="row" >
-
-                    <!-- <div class="col-lg-4 col-sm-6">
-                        <div id="jsonInfo">
-                        
-                        </div>
-                    </div> -->
-                    
-                    
-
+            	<div class="row">
 				<div class="col-lg-4 col-sm-6">
 
             <div class="card hovercard shadow">
@@ -97,15 +86,11 @@
                     <div class="title">
                         <a target="_blank" href="https://scripteden.com/">Intern's name</a>
                     </div>
-                    
-                    <div >
-                        <div class="desc">Slack ID: </div>
-                        <div class="desc">Email: </div>
-                        <hr/>
-                        <h6>Total points</h6>
-                        <p>443</p>
-                    </div>
-                    
+                    <div class="desc">Slack ID: </div>
+                    <div class="desc">Email: </div>
+                    <hr/>
+                    <h6>Total points</h6>
+                    <p>443</p>
                 </div>
             </div>
 
@@ -124,15 +109,11 @@
                     <div class="title">
                         <a target="_blank" href="https://scripteden.com/">Intern's Name</a>
                     </div>
-
-                    <div id="jsonInfo">
-                        <div class="desc">Slack ID: </div>
-                        <div class="desc">Email: </div>
-                        <hr/>
-                        <h6>Total points</h6>
-                        <p>443</p>
-                    </div>
-
+                    <div class="desc">Slack ID: </div>
+                    <div class="desc">Email: </div>
+                    <hr/>
+                    <h6>Total points</h6>
+                    <p>443</p>
                 </div>
             </div>
 
@@ -151,15 +132,11 @@
                     <div class="title">
                         <a target="_blank" href="https://scripteden.com/">Intern's name</a>
                     </div>
-                    
-                    <div id="jsonInfo">
-                        <div class="desc">Slack ID: </div>
-                        <div class="desc">Email: </div>
-                        <hr/>
-                        <h6>Total points</h6>
-                        <p>443</p>
-                    </div>
-
+                    <div class="desc">Slack ID: </div>
+                    <div class="desc">Email: </div>
+                    <hr/>
+                    <h6>Total points</h6>
+                    <p>443</p>
                 </div>
             </div>
 
@@ -169,6 +146,7 @@
                 </div>
                 <div class="container mt-5">
                 	<div class="card table-responsive shadow px-5">
+                		
 					<table id="table_id" class="display">
 					    <thead>
 					        <tr>
@@ -178,7 +156,8 @@
 					            <th>Total Points</th>
 					        </tr>
 					    </thead>
-					    <tbody  id="jsonData">
+					    <tbody id="jsonData" >
+					        
 					    </tbody>
 					</table>
                 	</div>
@@ -213,7 +192,7 @@
                 });
             });
             $(document).ready( function () {
-			    
+			    $('#table_id').DataTable();
 
 			    var myItems;
 
@@ -238,47 +217,20 @@
 				  //     });
 				  //   });
 
-                var urlHost = window.location.port == '5500' ? 'http://localhost:8000' : "https://" + window.location.hostname
-                var url = urlHost + "/index.php"
+                var urlHost = window.location.port == '5500' ? 'localhost:8000' : window.location.hostname
+                var url = "http://" + urlHost + "/index.php"
                 console.log(url)
 			    $.getJSON( url, function( data ) {
 				  var items = [];
 				  console.log('the data: ', data);
 
-                  for(i = 0; i < data.length; i++) {
-                    $( "<tr>", {
-				    html: "<td id='" + i + "'>" + data[i].FULL_NAME + "</td> <td id='" + i + "'>" + data[i].USERNAME + "</td> <td id='" + i + "'>" + data[i].EMAIL + "</td> <td id='" + i + "'>" + data[i].TOTAL_POINTS + "</td>"
+				  $.each( data, function( key, val ) {
+				    items.push( "<td id='" + key + "'>" +val['FULL_NAME'] + "</td>" );
+				  });
+
+				  $( "<tr>", {
+				    html: items.join( "" )
 				  }).appendTo( "#jsonData" );
-                    // items.push( "<td id='" + i + "'>" + data[i].FULL_NAME + "</td> " );
-                    // console.log('sdshj', data[i])
-                  }
-
-                //   for(i = 0; i < data.length; i++) {
-                      var sortedArr = [];
-                      sortedArr = data.sort().reverse();
-                      var temp = data.sort(function(a,b){
-                          console.log('fhd',a.TOTAL_POINTS, b.TOTAL_POINTS)
-                            return parseInt($(b.TOTAL_POINTS)) - parseInt($(a.TOTAL_POINTS));
-                        });
-
-                        console.log('temp, ', temp)
-                      console.log(sortedArr)
-                        // $( '<div>', {
-                        //     html: '<div class="card hovercard shadow"><div class="cardheader"></div><div class="avatar"><img alt="" src="http://lorempixel.com/100/100/people/9/"></div><div class="info"><div class="title"><a target="_blank" href="https://scripteden.com/">Intern\'s Name</a></div><div class="desc">Slack ID: '+ data[i].USERNAME + '</div><div class="desc">Email: '+ data[i].EMAIL +'</div><hr/><h6>Total points: '+data[i].TOTAL_POINTS+'</h6> </div></div></div>'
-                        // }).appendTo( "#jsonInfo" );
-
-
-                //   }
-
-				//   $.each( data, function( key, val ) {
-				//     items.push( "<td id='" + key + "'>" + val[0].FULL_NAME + "</td>" );
-                //     console.log(val[0].FULL_NAME)
-				//   });
-
-				//   $( "<tr>", {
-				//     html: items.join( "" )
-				//   }).appendTo( "#jsonData" );
-                $('#table_id').DataTable();
 				});
 			} );
 

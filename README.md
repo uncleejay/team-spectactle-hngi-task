@@ -66,7 +66,7 @@ To run the site:
 
 Accessibility, Browser and Device support
 •	The site is accessible to on most computing and mobile devices. 
-•	It also supports most Browsers (Chrome, Safari, Edge).
+•	It also supports most Browsers (Chrome, Safari, Edge)
 
 
 Hosting 
