@@ -75,15 +75,15 @@
                 <div class="container">
             	<div class="row" >
 
-                    <!-- <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-4 col-sm-6">
                         <div id="jsonInfo">
                         
                         </div>
-                    </div> -->
+                    </div>
                     
                     
 
-				<div class="col-lg-4 col-sm-6">
+				<!-- <div class="col-lg-4 col-sm-6">
 
             <div class="card hovercard shadow">
                 <div class="cardheader">
@@ -162,7 +162,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
 
 	</div>
                 </div>
@@ -253,7 +253,7 @@
                     // console.log('sdshj', data[i])
                   }
 
-                //   for(i = 0; i < data.length; i++) {
+                  for(i = 0; i < 3; i++) {
                       var sortedArr = [];
                       sortedArr = data.sort().reverse();
                       var temp = data.sort(function(a,b){
@@ -263,12 +263,12 @@
 
                         console.log('temp, ', temp)
                       console.log(sortedArr)
-                        // $( '<div>', {
-                        //     html: '<div class="card hovercard shadow"><div class="cardheader"></div><div class="avatar"><img alt="" src="http://lorempixel.com/100/100/people/9/"></div><div class="info"><div class="title"><a target="_blank" href="https://scripteden.com/">Intern\'s Name</a></div><div class="desc">Slack ID: '+ data[i].USERNAME + '</div><div class="desc">Email: '+ data[i].EMAIL +'</div><hr/><h6>Total points: '+data[i].TOTAL_POINTS+'</h6> </div></div></div>'
-                        // }).appendTo( "#jsonInfo" );
+                        $( '<div>', {
+                            html: '<div class="card hovercard shadow"><div class="cardheader"></div><div class="avatar"><img alt="" src="http://lorempixel.com/100/100/people/9/"></div><div class="info"><div class="title"><a target="_blank" href="https://scripteden.com/">Intern\'s Name</a></div><div class="desc">Slack ID: '+ data[i].USERNAME + '</div><div class="desc">Email: '+ data[i].EMAIL +'</div><hr/><h6>Total points: '+data[i].TOTAL_POINTS+'</h6> </div></div></div>'
+                        }).appendTo( "#jsonInfo" );
 
 
-                //   }
+                  }
 
 				//   $.each( data, function( key, val ) {
 				//     items.push( "<td id='" + key + "'>" + val[0].FULL_NAME + "</td>" );
